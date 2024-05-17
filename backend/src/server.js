@@ -1,9 +1,12 @@
 import express from "express";
 import { chats } from "../data/data.js";
 import dotenv from "dotenv";
+import connectDB from "./config/db.js";
+import colors from "colors";
 
 const app = express();
 dotenv.config();
+connectDB();
 
 app.get('/', (req, res)=>{
     res.send("api is running");
@@ -23,4 +26,4 @@ app.get('/api/chat/:id', (req, res)=>{
     res.send(singleChat);
 });
 
-app.listen(process.env.PORT, console.log(`app started on ${process.env.PORT}`));
+app.listen(process.env.PORT, console.log(`app started on port ${process.env.PORT}`.yellow.bold));

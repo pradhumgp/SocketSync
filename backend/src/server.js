@@ -13,6 +13,6 @@ app.get('/', (req, res)=>{
     res.send("api is running");
 });
 
-app.use('/api/user', userRoutes);
+app.use('/api/user', userRouter);
 
 app.listen(process.env.PORT, console.log(`app started on port ${process.env.PORT}`.yellow.bold));

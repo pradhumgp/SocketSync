@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import colors from "colors";
 import userRouter from "./routes/user.routes.js"
+import { notFound, errorHandler } from "./middlewares/error.middleware.js";
 
 const app = express();
 dotenv.config();
@@ -16,5 +17,8 @@ app.get('/', (req, res)=>{
 });
 
 app.use('/api/user', userRouter);
+
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(process.env.PORT, console.log(`app started on port http://localhost:${process.env.PORT}`.yellow.bold));

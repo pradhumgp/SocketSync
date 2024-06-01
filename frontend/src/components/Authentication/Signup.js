@@ -27,6 +27,7 @@ const Signup = () => {
   const handleShowHide = () => {
     setShow(!show);
   }
+
   const postDetails = (pic) => {
     setLoading(true);
     if(pic === undefined) {
@@ -73,6 +74,7 @@ const Signup = () => {
       setLoading(false);
     }
   }
+  
   const submitHandler = async() => {
     setLoading(true);
     if(!name || !email || !password || !confirmPassword){

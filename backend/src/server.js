@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import colors from "colors";
 import userRouter from "./routes/user.routes.js"
+import chatRouter from "./routes/chat.routes.js"
 import { notFound, errorHandler } from "./middlewares/error.middleware.js";
 
 const app = express();
@@ -17,6 +18,7 @@ app.get('/', (req, res)=>{
 });
 
 app.use('/api/user', userRouter);
+app.use('/api/chat', chatRouter);
 
 app.use(notFound);
 app.use(errorHandler);

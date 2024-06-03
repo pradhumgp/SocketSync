@@ -1,9 +1,10 @@
 import express from "express";
-import { protect } from "../middlewares/auth.middleware";
+import { protect } from "../middlewares/auth.middleware.js";
+import { accessChat } from "../controllers/chat.controller.js";
 
 const router = express.Router();
 
-// router.route('/').post(protect,accessChat);
+router.route('/').post(protect,accessChat);
 
 // router.route('/').get(protect,fetchChats);
 

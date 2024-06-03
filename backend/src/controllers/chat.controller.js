@@ -48,4 +48,7 @@ const accessChat = asyncHandler(async (req, res) => {
     }
 });
 
-export { accessChat };
+const fetchChats = asyncHandler(async (req, res) => {
+    console.log("complete later");
+});
+export { accessChat, fetchChats };

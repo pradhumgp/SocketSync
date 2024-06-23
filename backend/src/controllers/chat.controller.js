@@ -48,7 +48,6 @@ const accessChat = asyncHandler(async (req, res) => {
 });
 
 const fetchChats = asyncHandler(async (req, res) => {
-  console.log(`Fetching chats for user: ${req.user}`);
   try {
     Chat.find({ users: { $elemMatch: { $eq: req.user._id } } })
     .populate("users", "-password")
